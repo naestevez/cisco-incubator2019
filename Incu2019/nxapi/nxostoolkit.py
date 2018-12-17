@@ -13,11 +13,6 @@ nexus["user"] = input("user:")
 nexus["pw"] = input("password:")
 
 
-# nexus = {"ip": "sbx-nxos-mgmt.cisco.com",
-#         "port": "80",
-#         "user":"admin",
-#         "pw":"Admin_1234!"}
-
 uri = 'http://{}:{}/ins'.format(nexus['ip'], nexus['port'])
 
 jsonrpc_headers = {'Content-Type': 'application/json-rpc'}
@@ -59,8 +54,9 @@ response2 = requests.post(uri, data=json.dumps(payload2), headers=jsonrpc_header
 
 
 class Nexus():
-    """initiates an Nexus instance with class attributes"""
+
     def __init__(self):
+    """initiates an Nexus instance with class attributes"""
         show_vers_plat_dict = json.loads(response.text)
         self.version = show_vers_plat_dict["result"]["body"]["kickstart_ver_str"]
         self.platform = show_vers_plat_dict["result"]["body"]["chassis_id"]
