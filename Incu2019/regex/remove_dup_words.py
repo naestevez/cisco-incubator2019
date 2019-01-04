@@ -18,7 +18,7 @@ def remove_duplicates(text):
         for otherword in text_list_str[text_list_str.index(word) + 1:]:
             # if duplicate found, delete word
             if otherword == word:
-                del text_list_str[text_list_str.index(word)]
+                del text_list_str[text_list_str.index(otherword)]
 
     # joins all words with ", " and converts list into string
     text_with_no_dup = " ".join(text_list_str)
