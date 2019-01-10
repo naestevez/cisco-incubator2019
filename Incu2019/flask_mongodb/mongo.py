@@ -1,9 +1,14 @@
 from pymongo import MongoClient
 import re
 
-#  create new database and collection
+#  creates new database (incubator) and collection (ADDRESSBOOK)
 def get_mongo():
     client = MongoClient("localhost", 27017)
     db = client["incubator"]
     col = db.ADDRESSBOOK
     return col
+
+#  creates new document based on data parameter (newdoc is a dictionary)
+def insert_new_entry(newdoc):
+    collection = get_mongo()
+    doc = collection.insert_one(newdoc)
