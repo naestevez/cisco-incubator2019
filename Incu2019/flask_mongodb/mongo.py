@@ -17,3 +17,19 @@ def insert_new_entry(newdoc):
 def update_entry(fname, lname, newinfo):
     collection = get_mongo()
     collection.update_one({"$and":[ {"firstname": fname}, {"lastname": lname} ]}, {"$set": newinfo})
+
+#  displays documents matching both first and last names
+#  if None, displays all documents sorted alphabetically by last names
+
+def display_entries(fname=None, lname=None):
+    collection = get_mongo()
+    if fname == None and lname == None:
+        docs = collection.find().sort("lastname")
+        for d in docs:
+            print(d)
+    else:
+        fname = "(?=" + fname + ")\w+"
+        lname = "(?=" + lname + ")\w+"
+        docs = collection.find({"$and": [{"firstname": {"$regex": fname}},
+                                         {"lastname": {"$regex": lname}} ]
+                              })
