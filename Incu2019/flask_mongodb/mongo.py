@@ -12,3 +12,8 @@ def get_mongo():
 def insert_new_entry(newdoc):
     collection = get_mongo()
     doc = collection.insert_one(newdoc)
+
+#  updates a document matching first and last names with new data (newinfo is a dictionary)
+def update_entry(fname, lname, newinfo):
+    collection = get_mongo()
+    collection.update_one({"$and":[ {"firstname": fname}, {"lastname": lname} ]}, {"$set": newinfo})
