@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add new entry</title>
+  </head>
+  <body>
+    <h1>Little Black Book</h1>
+    <h5>special book for special people</h5>
+    <form action={{ url_for("new_entry") }} method="POST" role="form">
+      <div>
+        <div>
+          <input type="text" name="fname" placeholder="First name" required>
+        </div>
+        <div>
+          <input type="text" name="lname" placeholder="Last name" required>
+        </div>
+        <div>
+          <input type="text" name="phone" placeholder="Phone">
+        </div>
+        <div>
+          <input type="text" name="email" placeholder="Email">
+        </div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+  </body>
+</html>

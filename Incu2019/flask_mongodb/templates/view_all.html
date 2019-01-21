@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Little Black Book</h1>
+    <h5>special book for special people</h5>
+    <ul>
+      {% for id, info in all_entries.items() %}
+        <li>id: {{id}}</li>
+        <li>info: {{info}}</li>
+      {% endfor %}
+    </ul>
+    <p><a href="/">new</a></p>
+  </body>
+</html>
