@@ -6,7 +6,7 @@ def get_mongo():
     client = MongoClient("localhost", 27017)
     db = client["incubator"]
     col = db.ADDRESSBOOK
-    return col
+    return db
 
 #  creates new document based on data parameter (newdoc is a dictionary)
 def insert_new_entry(newdoc):
