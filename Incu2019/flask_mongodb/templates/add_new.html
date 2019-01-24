@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Add new entry</title>
-  </head>
-  <body>
+{% extends "layout.html" %}
+  {% block body %}
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/admin">Admin</a></li>
+      </ul>
+    </nav>
     <h1>Little Black Book</h1>
     <h5>special book for special people</h5>
     <form action={{ url_for("new_entry") }} method="POST" role="form">
@@ -24,6 +25,4 @@
         <button type="submit">Submit</button>
       </div>
     </form>
-
-  </body>
-</html>
+  {% endblock %}

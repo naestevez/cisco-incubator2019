@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>View Entry</title>
-  </head>
-  <body>
+{% extends "layout.html" %}
+  {% block body%}
     <div>
       <h3>You submitted:</h3>
       <ul>
-        <li>{{fname}} {{lname}}</li>
-        <li>{{phone}}</li>
-        <li>{{email}}</li>
+        <!-- {% for each_input in entry %} -->
+        <li>Name: {{entry.fname}} {{entry.lname}}</li>
+        <li>Phone: {{entry.phone}}</li>
+        <li>Email: {{entry.email}}</li>
+        <!-- {% endfor %} -->
       </ul>
       <p><a href="/">edit</a></p>
       <p><a href="/">delete</a></p>
       <p><a href="/view_all">view all</a></p>
     </div>
-  </body>
-</html>
+  {% endblock %}
