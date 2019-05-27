@@ -44,4 +44,4 @@ Pull requests are welcome. For major changes or feedback, please open an issue f
 
 Created by N. Alejandra Estevez for Cisco Incubator program - Python Track
 twitter: @naestevez
-github: @nestevez7
+github: @naestevez
